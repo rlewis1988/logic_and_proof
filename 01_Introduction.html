@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2015-08-17 Mon 22:31 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Logic and Proof</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="[[http://www.andrew.cmu.edu/user/avigad][Jeremy Avigad]]Jeremy Avigad, Robert Y. Lewis,  Floris van Doorn" />
+<link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/code.css"/>
+<script type="text/javascript" charset="utf-8">if(!window.PolymerGestures) { var head = document.getElementsByTagName('head')[0]; var js = document.createElement("script"); js.type = "text/javascript"; js.src = "//cdn.jsdelivr.net/polymer.platform/0.4.2/platform.js"; head.appendChild(js); } </script>
+<link rel='import' href='juicy-ace-editor.html'/>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Logic and Proof</h1>
+
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7"><span class="section-number-2"> 1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3"> 1.1</span> Mathematical Proof</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Although there is written evidence of mathematical activity in Egypt
+as early as 3000 BC, many scholars locate the birth of mathematics
+proper in ancient Greece around the sixth century BC, when deductive
+proof was first introduced. Aristotle credited Thales of Miletus with
+recognizing the importance of not just what we know but how we know
+it, and finding the appropriate grounds for knowledge via the
+deductive method. Around 300 BC, Euclid codified a deductive approach
+to geometry in his treatise, the <i>Elements</i>. Through the centuries,
+Euclid's axiomatic style was held as a paradigm of rigorous
+argumentation, not just in mathematics, but in philosophy and the
+sciences as well.
+</p>
+
+<p>
+Here is an example of an ordinary proof, in contemporary mathematical
+language. It establishes a fact that was known to the Pythagoreans.
+</p>
+
+<hr  />
+
+<p>
+<b>Theorem.</b> <img src="ltxpng/01_Introduction.org.temp_c2b1aa4de50e4765cbda5383526ed39d193ea11c.png" alt="$\sqrt 2$" /> is irrational, which is to say, it cannot be
+expressed as a fraction <img src="ltxpng/01_Introduction.org.temp_ea01c5a33461bb8c7bb99e1df18380efc6f9f494.png" alt="$a / b$" />, where <img src="ltxpng/01_Introduction.org.temp_97a53f35acd75d1e822056500e7598b499a0e842.png" alt="$a$" /> and <img src="ltxpng/01_Introduction.org.temp_c420a12f6e7138fe8ceaae940d4a1eb038f0b01c.png" alt="$b$" /> are integers.
+</p>
+
+<p>
+<b>Proof.</b> Suppose <img src="ltxpng/01_Introduction.org.temp_481c02730b9774dbb86eda3dddce75d7d6bc2395.png" alt="$\sqrt 2 = a / b$" /> for some pair of integers <img src="ltxpng/01_Introduction.org.temp_97a53f35acd75d1e822056500e7598b499a0e842.png" alt="$a$" /> and
+<img src="ltxpng/01_Introduction.org.temp_c420a12f6e7138fe8ceaae940d4a1eb038f0b01c.png" alt="$b$" />. By removing any common factors, we can assume <img src="ltxpng/01_Introduction.org.temp_ea01c5a33461bb8c7bb99e1df18380efc6f9f494.png" alt="$a / b$" /> is in
+lowest terms, so that <img src="ltxpng/01_Introduction.org.temp_97a53f35acd75d1e822056500e7598b499a0e842.png" alt="$a$" /> and <img src="ltxpng/01_Introduction.org.temp_c420a12f6e7138fe8ceaae940d4a1eb038f0b01c.png" alt="$b$" /> have no factor in common. Then <img src="ltxpng/01_Introduction.org.temp_e0d325bd3af0aa89b0a77742c7c5105ab6fc7b86.png" alt="$a =
+\sqrt 2 b$" />, and squaring both sides, we have <img src="ltxpng/01_Introduction.org.temp_cad4dae04fe5fd909389d9713ed6538647a8c2ff.png" alt="$a^2 = 2 b^2$" />.
+</p>
+
+<p>
+The last equation implies that <img src="ltxpng/01_Introduction.org.temp_03d2da844d68b79c4f202cdbdc1359723aed15ea.png" alt="$a^2$" /> is even, and since the square of
+an odd number is odd, <img src="ltxpng/01_Introduction.org.temp_97a53f35acd75d1e822056500e7598b499a0e842.png" alt="$a$" /> itself must be even as well. We therefore
+have <img src="ltxpng/01_Introduction.org.temp_f557a44eb6677c5e20664fbfc7390a35cec0d81e.png" alt="$a = 2c$" /> for some integer <img src="ltxpng/01_Introduction.org.temp_509fdae2a129908f5fe524961d94f3ab55ca6a73.png" alt="$c$" />. Substituting this into the
+equation <img src="ltxpng/01_Introduction.org.temp_cad4dae04fe5fd909389d9713ed6538647a8c2ff.png" alt="$a^2 = 2 b^2$" />, we have <img src="ltxpng/01_Introduction.org.temp_ca544b53d40cd9b893a9017930b1235614c850c1.png" alt="$4 c^2 = 2 b^2$" />, and hence <img src="ltxpng/01_Introduction.org.temp_39013fb41824babb7653affa9cec82709525b564.png" alt="$2 c^2 =
+b^2$" />. This means that <img src="ltxpng/01_Introduction.org.temp_e15c5a6f4da5171c83c01c4d5b927ecc36712a28.png" alt="$b^2$" /> is even, and so <img src="ltxpng/01_Introduction.org.temp_c420a12f6e7138fe8ceaae940d4a1eb038f0b01c.png" alt="$b$" /> is even as well.
+</p>
+
+<p>
+The fact that <img src="ltxpng/01_Introduction.org.temp_97a53f35acd75d1e822056500e7598b499a0e842.png" alt="$a$" /> and <img src="ltxpng/01_Introduction.org.temp_c420a12f6e7138fe8ceaae940d4a1eb038f0b01c.png" alt="$b$" /> are both even contradicts the fact that <img src="ltxpng/01_Introduction.org.temp_97a53f35acd75d1e822056500e7598b499a0e842.png" alt="$a$" />
+and <img src="ltxpng/01_Introduction.org.temp_c420a12f6e7138fe8ceaae940d4a1eb038f0b01c.png" alt="$b$" /> have no common factor. So the original assumption that <img src="ltxpng/01_Introduction.org.temp_a97b590cf01c2a2fbd7d4e3155726aaf1ca10ecb.png" alt="$\sqrt
+2 = a / b$" /> is false.
+</p>
+
+<hr  />
+
+<p>
+In the next example, we focus on the natural numbers, 
+<img src="ltxpng/01_Introduction.org.temp_fc7c7323e611698e95e8d7f2642e7129add09974.png" alt="\[ 
+\mathbb{N} = \{ 0, 1, 2, \ldots \} 
+\]" /> 
+A natural number <img src="ltxpng/01_Introduction.org.temp_cf55713ab087b151b93a8c1fad34a6098027b7b7.png" alt="$n$" /> greater than or equal to 2 is said to be
+<i>composite</i> if it can be written as a product <img src="ltxpng/01_Introduction.org.temp_413c8495744fdc15b7d90a3b300cfd6b325b0a77.png" alt="$n = m \cdot k$" /> where
+neither <img src="ltxpng/01_Introduction.org.temp_d9414a7493c7ac7622a2ef94b62850f16ce6fcb4.png" alt="$m$" /> or <img src="ltxpng/01_Introduction.org.temp_db0537856f75c28639e5b184746563f15cdc565b.png" alt="$k$" /> is equal to <img src="ltxpng/01_Introduction.org.temp_aaa5514a7a1fcec77d57fd73d77015204371d1f5.png" alt="$1$" />, and <i>prime</i> otherwise. Notice that
+if <img src="ltxpng/01_Introduction.org.temp_413c8495744fdc15b7d90a3b300cfd6b325b0a77.png" alt="$n = m \cdot k$" /> witnesses the fact that <img src="ltxpng/01_Introduction.org.temp_cf55713ab087b151b93a8c1fad34a6098027b7b7.png" alt="$n$" /> is composite, then <img src="ltxpng/01_Introduction.org.temp_d9414a7493c7ac7622a2ef94b62850f16ce6fcb4.png" alt="$m$" />
+and <img src="ltxpng/01_Introduction.org.temp_db0537856f75c28639e5b184746563f15cdc565b.png" alt="$k$" /> are both smaller than <img src="ltxpng/01_Introduction.org.temp_cf55713ab087b151b93a8c1fad34a6098027b7b7.png" alt="$n$" />. Notice also that, by convention, 0
+and 1 are considered neither prime nor composite.
+</p>
+
+<hr  />
+
+<p>
+<b>Theorem.</b> Every natural number greater than equal to 2 can be written
+as a product of primes.
+</p>
+
+<p>
+<b>Proof.</b> We proceed by induction on <img src="ltxpng/01_Introduction.org.temp_cf55713ab087b151b93a8c1fad34a6098027b7b7.png" alt="$n$" />. Let <img src="ltxpng/01_Introduction.org.temp_cf55713ab087b151b93a8c1fad34a6098027b7b7.png" alt="$n$" /> be any natural number
+greater than 2. If <img src="ltxpng/01_Introduction.org.temp_cf55713ab087b151b93a8c1fad34a6098027b7b7.png" alt="$n$" /> is prime, we are done; we can consider <img src="ltxpng/01_Introduction.org.temp_cf55713ab087b151b93a8c1fad34a6098027b7b7.png" alt="$n$" />
+itself as a product with one term. Otherwise, <img src="ltxpng/01_Introduction.org.temp_cf55713ab087b151b93a8c1fad34a6098027b7b7.png" alt="$n$" /> is composite, and we
+can write <img src="ltxpng/01_Introduction.org.temp_413c8495744fdc15b7d90a3b300cfd6b325b0a77.png" alt="$n = m \cdot k$" /> where <img src="ltxpng/01_Introduction.org.temp_d9414a7493c7ac7622a2ef94b62850f16ce6fcb4.png" alt="$m$" /> and <img src="ltxpng/01_Introduction.org.temp_db0537856f75c28639e5b184746563f15cdc565b.png" alt="$k$" /> are smaller than <img src="ltxpng/01_Introduction.org.temp_cf55713ab087b151b93a8c1fad34a6098027b7b7.png" alt="$n$" />. By
+the inductive hypothesis, each of <img src="ltxpng/01_Introduction.org.temp_d9414a7493c7ac7622a2ef94b62850f16ce6fcb4.png" alt="$m$" /> can be written as a product of
+primes, say
+<img src="ltxpng/01_Introduction.org.temp_4dff32ab7ad35c0ded23873cb62014771896c5a8.png" alt="\[
+m = p_1 \cdot p_2 \cdot \ldots \cdot p_u
+\]" />
+and
+<img src="ltxpng/01_Introduction.org.temp_caf18978a27c4354aabaa299d0840121d39a579f.png" alt="\[
+k = q_1 \cdot q_2 \cdot \ldots \cdot q_v.
+\]" />
+But then we have
+<img src="ltxpng/01_Introduction.org.temp_a255af168d1f2d4e5ad1e317502e5b55b09f30ca.png" alt="\[
+n = m \cdot k = p_1 \cdot p_2 \cdot \ldots \cdot p_u \cdot q_1 \cdot
+q_2 \cdot \ldots \cdot q_v,
+\]" />
+a product of primes, as required.
+</p>
+
+<hr  />
+
+<p>
+The first goal of this course is to teach you to write clear, readable
+mathematical proofs. We will do this by considering a number of
+examples, but also by taking a reflective point of view: we will
+carefully study the components of mathematical language and the
+structure of mathematical proofs, in order to gain a better
+understanding of how they work. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3"> 1.2</span> Symbolic Logic</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Towards gaining a better understanding of how proofs work, it will be
+helpful to study a subject known as "symbolic logic," which provides
+an idealized model of mathematical language and proof. In the <i>Prior
+Analytics</i>, the ancient Greek philosopher set out to analyze patterns
+of reasoning, and developed the theory of the <i>syllogism</i>. Here is
+one instance of a syllogism:
+</p>
+
+<hr  />
+<p>
+Every man is an animal.
+</p>
+
+<p>
+Every animal is mortal.
+</p>
+
+<p>
+Therefore every man is mortal.
+</p>
+<hr  />
+
+<p>
+Aristotle observed that the correctness of this inference has nothing
+to do with the truth or falsity of the individual statements, but,
+rather, then general pattern:
+</p>
+
+<hr  />
+<p>
+Every A is B.
+</p>
+
+<p>
+Every B is C.
+</p>
+
+<p>
+Therefore every A is C.
+</p>
+<hr  />
+
+<p>
+We can substitute various properties for A, B, and C: try substituting
+the properties of being a fish, being a unicorn, being a swimming
+creature, being a mythical creature, etc. The various statements may
+come out true or false, but all the instantiations will have the
+following crucial feature: if the two hypotheses come out true, then
+the conclusion comes out true as well. We express this by saying that
+the inference is <i>valid</i>.
+</p>
+
+<p>
+Although the patterns of language addressed by Aristotle's theory of
+reasoning are limited, we have him to thank for a crucial insight: we
+can classify valid patterns of inference by their logical form, while
+abstracting away specific content. It is this fundamental observation
+that underlies the entire field of symbolic logic.
+</p>
+
+<p>
+In the seventeenth century, Leibniz proposed the design of a
+<i>characteristica universalis</i>, a universal symbolic language in which
+one would express any assertion in a precise way, and a <i>calculus
+ratiocinatur</i>, a "calculus of thought" which would express the precise
+rules of reasoning. Leibniz himself took some steps to develop such a
+language and calculus, but much greater strides were made in the
+nineteenth century, through the work of Boole, Frege, Peirce,
+Schroeder, and others. Early in the twentieth century, these efforts
+blossomed into the field of mathematical logic.
+</p>
+
+<p>
+If you consider the examples of proofs in the last section, you will
+notice that some terms and rules of inference are specific to the
+subject matter at hand, having to do with numbers, the properties of
+being prime, composite, even, odd, and so on. But there are other
+terms and rules of inference that are not domain specific, such as
+those related to the words "every," "some," "and," and "if &#x2026; then."
+The goal of symbolic logic is to identify these core elements of
+reasoning and argumentation and explain how they work, as well as
+to explain how more domain-specific notions are introduced and used.
+</p>
+
+<p>
+To that end, we will introduce symbols for key logical notions,
+including the following:
+</p>
+<ul class="org-ul">
+<li><img src="ltxpng/01_Introduction.org.temp_7aa8f4c7e68d1dfcfe68d20325ef8e34aecfef22.png" alt="$A \to B$" />, "if <img src="ltxpng/01_Introduction.org.temp_dcf228f9026943997532cd7aa25ac90e1cfb2777.png" alt="$A$" /> then <img src="ltxpng/01_Introduction.org.temp_e40875d9db757d27089d053ebe3d6a4844ba9fb2.png" alt="$B$" />"</li>
+<li><img src="ltxpng/01_Introduction.org.temp_c19afe741c534371cc42565576fdfff9b6474635.png" alt="$A \wedge B$" />, "<img src="ltxpng/01_Introduction.org.temp_dcf228f9026943997532cd7aa25ac90e1cfb2777.png" alt="$A$" /> and <img src="ltxpng/01_Introduction.org.temp_e40875d9db757d27089d053ebe3d6a4844ba9fb2.png" alt="$B$" />"</li>
+<li><img src="ltxpng/01_Introduction.org.temp_8624614552aee1f34a822a2627d0365217283db2.png" alt="$A \vee B$" />, "<img src="ltxpng/01_Introduction.org.temp_dcf228f9026943997532cd7aa25ac90e1cfb2777.png" alt="$A$" /> or <img src="ltxpng/01_Introduction.org.temp_e40875d9db757d27089d053ebe3d6a4844ba9fb2.png" alt="$B$" />"</li>
+<li><img src="ltxpng/01_Introduction.org.temp_f23d0c47badb49f1d0c1b77c6287d4ea764b2226.png" alt="$\neg A$" />, "not <img src="ltxpng/01_Introduction.org.temp_dcf228f9026943997532cd7aa25ac90e1cfb2777.png" alt="$A$" />"</li>
+<li><img src="ltxpng/01_Introduction.org.temp_de7f0e802e13026b39ae373af7dbf55361a02aa6.png" alt="$\forall x \; A$" />, "for every <img src="ltxpng/01_Introduction.org.temp_6f7fa1b0d041f4bdf9945838b3d91894d444a70d.png" alt="$x$" />, <img src="ltxpng/01_Introduction.org.temp_dcf228f9026943997532cd7aa25ac90e1cfb2777.png" alt="$A$" />"</li>
+<li><img src="ltxpng/01_Introduction.org.temp_6a114bb9157d22ba43a411a00b188f55531d042d.png" alt="$\exists x \; A$" />, "for some <img src="ltxpng/01_Introduction.org.temp_6f7fa1b0d041f4bdf9945838b3d91894d444a70d.png" alt="$x$" />, <img src="ltxpng/01_Introduction.org.temp_dcf228f9026943997532cd7aa25ac90e1cfb2777.png" alt="$A$" />"</li>
+</ul>
+<p>
+We will then provide a formal proof system that will let us establish,
+deductively, that certain entailments between such statements are
+valid. 
+</p>
+
+<p>
+The proof system we will use is a version of <i>natural deduction</i>, a
+type of proof system introduced by Gerhard Gentzen in the 1930's to
+model informal styles of argument. In this system, the fundamental
+unit of judgement is the assertion that an assertion, <img src="ltxpng/01_Introduction.org.temp_dcf228f9026943997532cd7aa25ac90e1cfb2777.png" alt="$A$" />,
+follows from a finite set of assertions, <img src="ltxpng/01_Introduction.org.temp_888eff296931f30a2e505e474eab406bae69d752.png" alt="$\Gamma$" />. This is written as
+<img src="ltxpng/01_Introduction.org.temp_bd017e4f3ad15b1d6e5854b5c8f253b3ffcc1bbd.png" alt="$\Gamma \vdash A$" />. If <img src="ltxpng/01_Introduction.org.temp_888eff296931f30a2e505e474eab406bae69d752.png" alt="$\Gamma$" /> and <img src="ltxpng/01_Introduction.org.temp_faf49d3c56a5764525ae0f27a0a4c36fa4948966.png" alt="$\Delta$" /> are two finite sets of
+hypotheses, we will write <img src="ltxpng/01_Introduction.org.temp_8da923fa901be56706095eda18756d61419b0bcb.png" alt="$\Gamma, \Delta$" /> for the <i>union</i> of these
+two sets, that is, the set consisting of all the hypotheses in
+each. With these conventions, the rule for the conjunction symbol can
+be expressed as follows:
+</p>
+
+<div class="figure">
+<p><img src="ltxpng/01_Introduction.org.temp_6f91d462db54e2f1e2a79f6ddf84f6c5f8fa2b57.png" alt="\begin{prooftree}
+\def\fCenter{\ \vdash\ }
+\Axiom$\Gamma \fCenter A$
+\Axiom$\Delta \fCenter B$
+\BinaryInf$\Gamma, \Delta \fCenter A \wedge B$
+\end{prooftree}
+" /></p>
+</div>
+<p>
+This should be interpreted as follows: assuming <img src="ltxpng/01_Introduction.org.temp_dcf228f9026943997532cd7aa25ac90e1cfb2777.png" alt="$A$" /> follows from the
+hypotheses <img src="ltxpng/01_Introduction.org.temp_888eff296931f30a2e505e474eab406bae69d752.png" alt="$\Gamma$" />, and <img src="ltxpng/01_Introduction.org.temp_e40875d9db757d27089d053ebe3d6a4844ba9fb2.png" alt="$B$" /> follows from the hypotheses <img src="ltxpng/01_Introduction.org.temp_faf49d3c56a5764525ae0f27a0a4c36fa4948966.png" alt="$\Delta$" />, <img src="ltxpng/01_Introduction.org.temp_6ee55b0ca562b0760c86826771ec99796fa43215.png" alt="$A
+\wedge B$" /> follows from the hypotheses in both <img src="ltxpng/01_Introduction.org.temp_888eff296931f30a2e505e474eab406bae69d752.png" alt="$\Gamma$" /> and <img src="ltxpng/01_Introduction.org.temp_faf49d3c56a5764525ae0f27a0a4c36fa4948966.png" alt="$\Delta$" />. 
+</p>
+
+<p>
+We will see that one can write such proofs more compactly leaving the
+hypotheses implicit, so that the rule above is expressed as follows:
+</p>
+
+<div class="figure">
+<p><img src="ltxpng/01_Introduction.org.temp_0e6127ff71f65f63a0fcd1fb2e2df14fa474ecf3.png" alt="\begin{prooftree}
+\AxiomC{$A$}
+\AxiomC{$B$}
+\BinaryInfC{$A \wedge B$}
+\end{prooftree}
+" /></p>
+</div>
+<p>
+In this format, a snippet of the first proof in the previous section
+might be rendered as follows:
+</p>
+
+<div class="figure">
+<p><img src="ltxpng/01_Introduction.org.temp_92b0a0c66c74187fd97c23ace60faf51f278c380.png" alt="\begin{prooftree}
+\AxiomC{}
+\UnaryInfC{$\neg {\mathsf Even}(b)$}
+\AxiomC{$\forall x \; (\neg {\mathsf Even}(x) \to \neg {\mathsf
+Even}(x^2))$}
+\UnaryInfC{$\neg {\mathsf Even}(b) \to \neg {\mathsf
+Even}(b^2))$}
+\BinaryInfC{$\neg {\mathsf Even}(b^2)$}
+\AxiomC{${\mathsf Even}(b^2)$}
+\BinaryInfC{$\bot$}
+\UnaryInfC{${\mathsf Even}(b)$}
+\end{prooftree}
+" /></p>
+</div>
+
+<p>
+The complexity of such proofs can quickly grown out of hand, and
+complete proofs of even elementary mathematical facts can become quite
+long. Such systems are not designed for writing serious
+mathematics. Rather, they provide idealized models of mathematical
+reasoning, and insofar as they capture something of the structure of
+an informal proof, they enable us to study the properties of
+mathematical reasoning.
+</p>
+
+<p>
+The second goal of this course is to help you understand natural
+deduction, as an example of a formal deductive system.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3"> 1.3</span> Interactive Theorem Proving</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Early work in mathematical logic aimed to show that ordinary
+mathematical arguments could be modeled in symbolic calculi, at least
+in principle. As noted above, complexity issues limit the range of
+what can be accomplished in practice; even elementary mathematical
+arguments require long derivations that are hard to write and hard to
+read, and do little to promote understanding of the underlying
+mathematics.
+</p>
+
+<p>
+Since the end of the twentieth century, however, the advent of
+computational proof assistants has begun to make complete
+formalization feasible. Working interactively with theorem proving
+software, users can construct formal derivations of complex theorems
+that can be stored and checked by computer. Automated methods can be
+used to fill in small gaps by hand, verify long calculations
+axiomatically, or fill in long chains of inferences
+deterministically. The reach of automation is currently fairly
+limited, however, and the general goal is for users to present just
+enough information to the system to enable it to construct and check a
+formal derivation. This typically involves writing proofs in a sort of
+"programming language" that is designed with that purpose in mind. For
+example, here is a short proof in the <i>Lean</i> theorem prover:
+</p>
+<div class="org-src-container">
+<juicy-ace-editor id='lean-juicy-ace-editor-1' mode="ace/mode/lean" readonly="true">section
+variables (p q : Prop)
+
+theorem my_theorem : p ∧ q → q ∧ p :=
+assume H : p ∧ q,
+have p, from and.left H,
+have q, from and.right H,
+show q ∧ p, from and.intro `q` `p`
+
+end
+</juicy-ace-editor><div id='lean-full-code-1' style='display:none'>section
+variables (p q : Prop)
+
+theorem my_theorem : p ∧ q → q ∧ p :=
+assume H : p ∧ q,
+have p, from and.left H,
+have q, from and.right H,
+show q ∧ p, from and.intro `q` `p`
+
+end
+</div><div class='no-print' align="left"><button type="button" onclick="invoke_leanjs($('#lean-full-code-1').text());">Try it yourself &raquo;</button></div>
+</div>
+<p>
+If you are reading the present text in online form, you will find a
+button underneath the formal "proof script" that says "Try it
+yourself." Pressing the button copies the proof to an editor window at
+right, and runs a version of <i>Lean</i> inside your browser to process the
+proof, turn it into an axiomatic derivation, and verify its
+correctness. You can experiment by varying the text in the editor and
+pressing the "play" button to see the result.
+</p>
+
+<p>
+Proofs in Lean can access a library of prior mathematical results, all
+verified down to axiomatic foundations. A goal of the field of
+interactive theorem proving is to reach the point where any
+contemporary theorem can be verified in this way. For example, here is
+a formal proof that the square root of two is irrational, following
+the model of the informal proof presented above:
+</p>
+<div class="org-src-container">
+<juicy-ace-editor id='lean-juicy-ace-editor-2' mode="ace/mode/lean" readonly="true">import data.rat
+open eq.ops nat
+
+theorem sqrt_two_irrational {a b : ℕ} (co : coprime a b) : a^2 ≠ 2 * b^2 :=
+assume H : a^2 = 2 * b^2,
+have even (a^2), from even_of_exists (exists.intro _ H),
+have even a, from even_of_even_pow this,
+obtain c (aeq : a = 2 * c), from exists_of_even this,
+have 2 * (2 * c^2) = 2 * b^2, by rewrite [-H, aeq, *pow_two, mul.assoc, mul.left_comm c],
+have 2 * c^2 = b^2, from eq_of_mul_eq_mul_left dec_trivial this,
+have even (b^2), from even_of_exists (exists.intro _ (eq.symm this)),
+have even b, from even_of_even_pow this,
+have 2 ∣ gcd a b, from dvd_gcd (dvd_of_even `even a`) (dvd_of_even `even b`),
+have 2 ∣ 1, from co ▸ this,
+absurd `2 ∣ 1` dec_trivial
+</juicy-ace-editor><div id='lean-full-code-2' style='display:none'>import data.rat
+open eq.ops nat
+
+theorem sqrt_two_irrational {a b : ℕ} (co : coprime a b) : a^2 ≠ 2 * b^2 :=
+assume H : a^2 = 2 * b^2,
+have even (a^2), from even_of_exists (exists.intro _ H),
+have even a, from even_of_even_pow this,
+obtain c (aeq : a = 2 * c), from exists_of_even this,
+have 2 * (2 * c^2) = 2 * b^2, by rewrite [-H, aeq, *pow_two, mul.assoc, mul.left_comm c],
+have 2 * c^2 = b^2, from eq_of_mul_eq_mul_left dec_trivial this,
+have even (b^2), from even_of_exists (exists.intro _ (eq.symm this)),
+have even b, from even_of_even_pow this,
+have 2 ∣ gcd a b, from dvd_gcd (dvd_of_even `even a`) (dvd_of_even `even b`),
+have 2 ∣ 1, from co ▸ this,
+absurd `2 ∣ 1` dec_trivial
+</div><div class='no-print' align="left"><button type="button" onclick="invoke_leanjs($('#lean-full-code-2').text());">Try it yourself &raquo;</button></div>
+</div>
+
+<p>
+The third goal of this course is to teach you to write elementary
+proofs in <i>Lean</i>. The facts that we will ask you to prove in Lean will
+be more elementary than the informal proofs we will ask you to write,
+but our intent is that formal proofs will model and clarify the
+informal proof strategies we will teach.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3"> 1.4</span> The Semantic Point of View</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+As we have presented the subject here, the goal of symbolic logic is
+to specify a language and rules of inference that enable us to get at
+the truth in a reliable way. The idea is that the symbols we choose
+denote objects and concepts that have a fixed meaning, and the rules
+of inference we adopt enable us to draw true conclusions from true
+hypotheses.
+</p>
+
+<p>
+One can adopt another view of logic, however, as a system where some
+symbols have a fixed meaning, such as the symbols for "and," "or," and
+"not," and others have a meaning that is taken to vary. For example,
+the expression <img src="ltxpng/01_Introduction.org.temp_dcb1bc6043f3b45992a7d897b93c1f0be2c8c09d.png" alt="$P \wedge (Q \vee R)$" />, read "<img src="ltxpng/01_Introduction.org.temp_fae38c5659257d615824fea297448e51a2d5b64f.png" alt="$P$" /> and either <img src="ltxpng/01_Introduction.org.temp_5e54f5734cf55716508fa61f5ea7f635d589e918.png" alt="$Q$" /> or
+<img src="ltxpng/01_Introduction.org.temp_9e0d48d9af036e26567970c07101611e52ede6af.png" alt="$R$" />," may be true or false <i>depending on the basic assertions that
+<img src="ltxpng/01_Introduction.org.temp_fae38c5659257d615824fea297448e51a2d5b64f.png" alt="$P$" />, <img src="ltxpng/01_Introduction.org.temp_5e54f5734cf55716508fa61f5ea7f635d589e918.png" alt="$Q$" />, and <img src="ltxpng/01_Introduction.org.temp_9e0d48d9af036e26567970c07101611e52ede6af.png" alt="$R$" /></i>; more specifically, on their truth values. For
+example, if <img src="ltxpng/01_Introduction.org.temp_fae38c5659257d615824fea297448e51a2d5b64f.png" alt="$P$" />, <img src="ltxpng/01_Introduction.org.temp_5e54f5734cf55716508fa61f5ea7f635d589e918.png" alt="$Q$" />, and <img src="ltxpng/01_Introduction.org.temp_9e0d48d9af036e26567970c07101611e52ede6af.png" alt="$R$" /> stand for "seven is prime," "seven is
+even," and "seven is odd," respectively, then the expression is
+true. If we replace "seven" by "six," the statement is false. More
+generally, the expression comes out true whenever <img src="ltxpng/01_Introduction.org.temp_fae38c5659257d615824fea297448e51a2d5b64f.png" alt="$P$" /> is true and at
+least one of <img src="ltxpng/01_Introduction.org.temp_5e54f5734cf55716508fa61f5ea7f635d589e918.png" alt="$Q$" /> and <img src="ltxpng/01_Introduction.org.temp_9e0d48d9af036e26567970c07101611e52ede6af.png" alt="$R$" /> is true, and false otherwise.
+</p>
+
+<p>
+From this perspective, logic is not so much a language for asserting
+truth, but a language for describing possible states of affairs. In
+other words, logic provides a specification language, with expressions
+that can be true or false depending on how we interpret the symbols
+that are allowed to vary. For example, if we fix the meaning of the
+basic predicates, the statement "there is a red block between two blue
+blocks" may be true or false of a given "world" of blocks, and we can
+take the expression to pick out the set of worlds in which it is true.
+</p>
+
+<p>
+Such a view of logic is important in computer science, where we use
+logical expressions to select entries from a database matching certain
+criteria, to specify properties of hardware and software systems, or
+to specify constraints that we would like a constraint solver to
+satisfy.
+</p>
+
+<p>
+There are important connections between the syntactic / deductive
+point of view, on the one hand, and the semantic / model-theoretic
+point of view, on the other. We will explore some of these along the
+way. For example, we can view the "valid" assertions as those that are
+true under all possible interpretations of the non-fixed symbols, and
+the "valid" inferences as those that maintain truth in all possible
+states and affairs. From this point of view, a deductive system should
+only allow us to derive valid assertions and entailments, a property
+known as <i>soundness</i>. If a deductive system is strong enough to allow
+us to verify <i>all</i> valid assertions and entailments, it is said to be
+<i>complete</i>.
+</p>
+
+<p>
+The fourth goal of course is to convey the semantic view of logic, and
+understand how logical expressions can be used to characterize states
+of affairs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5"><span class="section-number-3"> 1.5</span> Goals Summarized</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+To summarize, these are the goals of this course:
+</p>
+<ul class="org-ul">
+<li>to teach you to write clear, "literate," mathematical proofs</li>
+<li>to introduce you to symbolic logic and the formal modeling of deductive proof</li>
+<li>to introduce you to interactive theorem proving</li>
+<li>to teach you to understand how to use logic as a precise
+specification language.</li>
+</ul>
+
+<p>
+Let us take a moment to comment on the relationship between some of
+these goals. It is important not to confuse the first three. We are
+dealing with three different kinds of mathematical language: ordinary
+mathematical language, the symbolic representations of mathematical
+logic, and computational implementations in interactive proof
+assistants. These are very different things! 
+</p>
+
+<p>
+Symbolic logic is not meant to replace ordinary mathematical language,
+and you should not use symbols like <img src="ltxpng/01_Introduction.org.temp_9011715a702d7dc557cef311a0c05f19d5e0f94e.png" alt="$\wedge$" /> and <img src="ltxpng/01_Introduction.org.temp_3629a69251078bebceb29f35a9c948228216f4d8.png" alt="$\vee$" /> in ordinary
+mathematical proofs, any more than you would use them in place of the
+words "and" and "or" in letters home to your parents. Natural
+languages provide nuances of expression that can convey levels of
+meaning and understanding that go beyond pattern matching to verify
+correctness. At the same time, modeling mathematical language with
+symbolic expressions provides a level of precision that makes it
+possible to turn mathematical language itself into an object of
+study. Each has its place, and we hope to get you to appreciate the
+value of each without confusing the two.
+</p>
+
+<p>
+The proof languages used by ineractive theorem provers lie somewhere
+between the two extremes. On the one hand, they have to be specified
+with enough precision for a computer to process them and act
+appropriately; on the other hand, they aim to capture some of the
+higher-level nuances and features of informal language in a way that
+enables us to write more complex arguments and proofs. Rooted in
+symbolic logic and designed with ordinary mathematical language in
+mind, they aim to bridge the gap between the two.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><span class="section-number-3"> 1.6</span> About These Notes</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+<i>Lean</i> is a new theorem prover, and is still under development.
+Similarly, these notes are being written on the fly as the class
+proceeds. The first time through, parts will necessarily be sketchy,
+buggy, and incomplete. They will therefore at best serve as a
+supplement to class notes and the textbook, Daniel Velleman's <i>How to
+Prove it: A Structured Approach</i>. Please bear with us! Your feedback
+will be quite helpful to improving the notes.
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
