@@ -6,10 +6,10 @@ Title: Logic and Proof
   :CUSTOM_ID: Algebra
 :END:
 
-Mathematicians often strive for abstraction, trying to prove theorems with as few hypotheses 
+Mathematicians often strive for abstraction, trying to prove theorems with as few hypotheses
 as possible. This is often for pragmatic reasons: a theorem with fewer (or weaker) hypotheses will apply
-to more situations and require less work to use. Other times, it is for aesthetic reasons: 
-mathematicians are curious to know how generally a certain result holds, and if there is a 
+to more situations and require less work to use. Other times, it is for aesthetic reasons:
+mathematicians are curious to know how generally a certain result holds, and if there is a
 clean way to characterize the necessary and sufficient conditions.
 
 This desire for abstraction led mathematicians, over centuries, to identify certain kinds
@@ -20,14 +20,14 @@ of symmetries of a cube -- they share certain high-level properties of interest.
 terminology you've seen already, these structures are all /models/ for one particular theory.
 
 The study of these fundamental structures and their models is called /algebra/, or sometimes /abstract
-algebra/ to distinguish it from the algebra learned in school. 
+algebra/ to distinguish it from the algebra learned in school.
 
 (FINISH INTRO)
 
 ** Groups
 
 One of the most common and fundamental algebraic structures is the /group/. A group is a set
-$G$ that has a special element $e$, a binary operation $\cdot$ (with codomain $G$), and a unary operation $inv$ 
+$G$ that has a special element $e$, a binary operation $\cdot$ (with codomain $G$), and a unary operation $inv$
 (usually written in postfix notation, $^{-1}$). Rather than describing $inv$ as a unary function,
 we often describe it by saying "for every element $g \in G$, we have an associated element $g^{-1}$."
 
@@ -48,7 +48,7 @@ group is a model for the theory with constant $e$, function symbols $\cdot$ and 
 (A brief but important aside: we often write "let G be a group," but since we have defined a group to be a
 model of a particular structure, this isn't quite right. Technically, a group is a set $G$ bundled
 with the identity element and multiplication and inverse operations. Often, though, these operations
-are implicit (or we just use the notation $e$, $\cdot$ and $\inv$), and so "let G be a group" is shorthand
+are implicit, or we just use the notation $e$, $\cdot$ and $\inv$. In these cases, "let G be a group" is shorthand
 for "let $\langle G, e, \cdot, \inv \rangle$ be a group.")
 
 What are some examples of groups? There are many -- remember that, even though we use the symbol $\cdot$
@@ -58,15 +58,15 @@ need to use this notation.
 - The integers $\ZZ$ form a group when $\cdot$ is interpreted as addition, $inv$ as negation, and $e$ as $0$.
   It is easy to check that the group axioms hold: e.g., for any $g \in \ZZ$, $g + (-g) = 0$.
 - Similarly, the rational numbers $\QQ$ also form a group using addition, negation, and $0$.
-- Take our domain to again be $\QQ$. When we interpret $\cdot$ as multiplication, $e$ as $1$, and $inv$ as 
+- Take our domain to again be $\QQ$. When we interpret $\cdot$ as multiplication, $e$ as $1$, and $inv$ as
   reciprocation (that is, $(\frac{a}{b})^{-1} = \frac{b}{a}$),  we do /not/ get a group. Why not? The inverse we have
   defined here is not a total function -- there is no value set yet for $0^{-1}$. Of course, we could always
-  pick an arbitrary value for this (say, $0$), but the value must satisfy our third axiom 
+  pick an arbitrary value for this (say, $0$), but the value must satisfy our third axiom
   $0 \cdot 0^{-1} = 1 \wedge 0^{-1} \cdot 0 = 1$. Since there is no value we can multiply by $0$ to get 1,
   this cannot hold. So we cannot define a group using multiplication over all of $\QQ$.
 - However, the interpretation above works perfectly well if we choose the domain $\QQ \setminus \{0\}$, the
   set of rationals excluding 0.
-- Let $S_n = \{1, 2, 3, \ldots, n\}$, and think of this set as coming "in order." A /permutation/ of $S_n$ is a 
+- Let $S_n = \{1, 2, 3, \ldots, n\}$, and think of this set as coming "in order." A /permutation/ of $S_n$ is a
   shuffling of the order of its elements. For example, "flipping the first two elements" is a permutation;
   applying this permutation to $S_n$ gives the ordered set $\{2, 1, 3, \ldots, n\}$. Permutations can be composed:
   given two permutations, do the first shuffle, and then do the second shuffle to the resulting set. There is a
@@ -74,7 +74,7 @@ need to use this notation.
   as just applying the second. And permutations can be "undone," by "reversing" the shuffle. This is a (partial, informal)
   argument that the set of permutations of $S_n$ forms a group. How could we make the notion of a "shuffle" more precise?
   How would we show, formally, that this set does form a group?
-  
+
 On the surface, these concrete groups look very different: the set of permutations of $S_n$ seems
 nothing like the set of integers. But some properties, consequences of the group axioms, hold in every group.
 
@@ -82,16 +82,16 @@ nothing like the set of integers. But some properties, consequences of the group
 *Theorem.* Let $G$ be a group. The identity element $e \in G$ is unique. That is: if for some element $e' \in G$,
 we have $\forall g (e' \cdot g = g \wedge g \cdot e' = g)$, then $e' = e$.
 
-*Proof.* Applying our hypothesis, we see that $e' \cdot e = e$. Applying the nilpotency axiom, we see that 
+*Proof.* Applying our hypothesis, we see that $e' \cdot e = e$. Applying the nilpotency axiom, we see that
 $e' \cdot e = e'$. Therefore, by the symmetry and transitivity of equality, e' = e.
 
 # Multiply both sides by $e^{-1}$ on the right, to get
-# $(e' \cdot e) \cdot e^{-1} = e \cdot e^{-1}$. Using the inverse axiom, the right hand side is equal to $e$: 
+# $(e' \cdot e) \cdot e^{-1} = e \cdot e^{-1}$. Using the inverse axiom, the right hand side is equal to $e$:
 # $(e' \cdot e) \cdot e^{-1} = e. Using the associativity axiom, the left hand side is equal to e' \cdot (e \cdot e^{-1}),
 # which is equal to $e' \cdot e$ (by the inverse axiom), which is equal to $e'$ (by nilpotency). So we have derived $e' = e$.
 --------------------------
 --------------------------
-*Theorem.* Let $G$ be a group. For each $g \in G$, $g\inv$ is unique. That is: If for some element $h \in G$, 
+*Theorem.* Let $G$ be a group. For each $g \in G$, $g\inv$ is unique. That is: If for some element $h \in G$,
 we have $g\cdot h = e \wedge h \cdot g = e$, then $h = g\inv$.
 
 *Proof.* If $g \cdot h = e$, then $g\inv \cdot (g \cdot h) = g\inv \cdot h = g\inv$. By associativity, the right hand side
@@ -110,12 +110,12 @@ infinite order?)
 *Proof.* We examine the sequence of group elements $g, g^2, g^3, \ldots$. Since $G$ is finite, these elements cannot
 all be different: there are some positive $k$ and $l$, with $k > l$, such that $g^k = g^{k - l}$. We may assume that $k$
 is the smallest value for which we can find an $l$ with this property. (This is just to say that $g^k$ is the first "repeat"
-occurrence of an element of the sequence.) Note also that $k \le \|G\| + 1$, since we cannot go more than $\|G\|$ steps
-without a repeat; therefore $l \le \|G\|$.
+occurrence of an element of the sequence.) Note also that $k \le |G| + 1$, since we cannot go more than $|G|$ steps
+without a repeat; therefore $l \le |G|$.
 
-We have that $g^{k - l}\cdot g^l = g^k = g^{k - l}, and similarly $g^l \cdot g^{k - l} = g^l$. Since we have shown that
+We have that $g^{k - l}\cdot g^l = g^k = g^{k - l}$, and similarly $g^l \cdot g^{k - l} = g^l$. Since we have shown that
 in every group the identity $e$ is unique, this implies that $g^l = e$. We leave it as an exercise to the reader to argue
-that $l$ is the smallest number for which this is true. Therefore, the order of $g$ is $l \le \|G\|$.
+that $l$ is the smallest number for which this is true. Therefore, the order of $g$ is $l \le |G|$.
 --------------------------
 
 ** Fields
@@ -131,8 +131,8 @@ notation $\inv$ for $inv$. We say that $F$ is a field if the following condition
 - The operations $+$ and $\cdot$ are commutative: for all $a, b \in F$, $a + b = b + a$ and $a \cdot b = b \cdot a$
 - Multiplication distributes over addition: for all $a, b, c \in F$, $a \cdot (b + c) = (a \cdot b) + (a \cdot c).
 
-This description may seem a bit opaque, but once again, there are many familiar examples of fields. We argued earlier that 
-the first two bullet points hold for the rationals $\QQ$, under the obvious interpretation; 
+This description may seem a bit opaque, but once again, there are many familiar examples of fields. We argued earlier that
+the first two bullet points hold for the rationals $\QQ$, under the obvious interpretation;
 it is easy to confirm that the second two bullets hold as well. Similarly, the obvious interpretation on the reals $\RR$
 forms a field.
 
@@ -143,11 +143,11 @@ inverses on $F$, and distributivity follows from distributivity on $\NN$; theref
 In fact, for any prime $p$, the set $F = \{0, 1, \ldots, p - 1\}$ forms a field.
 
 There are many situations in mathematics that seem to "require" real numbers: consider a vector space, for example,
-whose objects can be stretched or compressed by any factor $r \in \RR$. Often, there is nothing essential about $\RR$ in 
+whose objects can be stretched or compressed by any factor $r \in \RR$. Often, there is nothing essential about $\RR$ in
 these situations. The rationals $\QQ$ might work just as well; sometimes, it is just the field operations and axioms
-that are needed. Other times, perhaps a field with additional properties -- an ordering of the elements, or a norm -- 
+that are needed. Other times, perhaps a field with additional properties -- an ordering of the elements, or a norm --
 is required. The power of algebraic reasoning allows us to specify, axiomatically, exactly which properties we need. We
-avoid being unnecessarily specific in our definitions and theorems, and the fact that they hold for a particular structure 
+avoid being unnecessarily specific in our definitions and theorems, and the fact that they hold for a particular structure
 (say, $\RR$) is a simple consequence of the fact that the structure forms a field.
 
 ** Algebraic reasoning in Lean
