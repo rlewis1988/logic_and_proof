@@ -43,10 +43,14 @@ injection, the same Beatle will never be counted twice.
 Using this idea, it is easy to define what it means for a set to have
 exactly $n$ elements.
 
---------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Definition.* Let $n$ be a natural number. A set $A$ has exactly $n$ elements
 if there is a bijection between $\{1, 2, 3, \ldots, n\}$ and $A$.
---------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 We also say that the cardinality of $A$ is $n$. The word
 /cardinality/ is (roughly) a synonym for size. In general, we denote the
@@ -58,20 +62,28 @@ the same cardinality. In this case, we say that $A$ and $B$ are
 notions to infinite sets -- we will give a slightly more precise definition
 of equinumerosity.
 
---------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Definition.* Two sets $A$ and $B$ are said to be /equinumerous/ if there
 is a bijection between them. Equivalently, we say $A$ and $B$ have the same
 cardinality.
---------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 Using this terminology, we could restate our earlier definition: a set has
 cardinality $n$ if it is equinumerous with $\{1, 2, 3, \ldots, n\}$.
 
---------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Definition.* For two sets $A$ and $B$, we say the cardinality of $A$ is
 less than or equal to the cardinality of $B$ -- that is, $|A| \le |B|$ --
 when there is an injection $f : A \to B$.
---------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 Recall, from our earlier discussion of injections and surjections, that
 this implies $|A| \le |B|$ if and only if there is a surjection $f : B \to A$.
@@ -82,10 +94,14 @@ cardinalities is a weak order!
 
 We finish this section with one final definition.
 
---------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Definition.* A set $A$ is /finite/ if there is some natural number $n$ such
 that $A$ has cardinality $n$.
---------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 This definition may seem obvious. But,
 as always, it is important for us to be absolutely precise. Infinite sets
@@ -110,9 +126,13 @@ The definition we will adopt here may again seem almost trivial, but be assured
 this is not the case. (In fact, in most circumstances, it is equivalent to
 Dedekind's definition.)
 
---------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Definition.* A set $A$ is /infinite/ if it is not finite.
---------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 /Infinite/ is simply the negation of /finite/. Using our knowledge of first-order
 logic, we can turn this definition into an equivalent (positive) statement: a set
@@ -130,11 +150,15 @@ Since natural numbers are used in the definition of "finite," the set $\NN$ has
 a kind of special status. In a sense, it is the simplest kind of infinite set we
 can create. We use a special term to describe its size.
 
---------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Definition.* A set $A$ is /countably infinite/ (or sometimes just /countable/)
 if $A$ is equinumerous with $\NN$. Equivalently, we say that $A$ has cardinality
 $\aleph_0$ (read "aleph-nought"). If $A$ is not countable, we say it is /uncountable/.
---------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 (Note that, since the identity map $id(x) = x$ is a bijection on any set, every
 set is equinumerous with itself, and thus $\NN$ itself is countably infinite.)
@@ -158,7 +182,8 @@ countable? How about the rationals $\QQ$, or the reals $\RR$? What is the logica
 form of the statement "a set $A$ is not countable," and how might we prove such
 a statement? Reflect on these questions before reading on!
 
------------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 We've argued that the set of natural numbers $\NN$ is countable: there are obvious
 "first," "second," and "third" elements, and so on. For the set of integers $\ZZ$,

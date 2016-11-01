@@ -38,15 +38,22 @@ idea of a "convergent" sequence without referring to a point that the sequence c
 We will approach this with the notion of a Cauchy sequence. Roughly speaking, a Cauchy sequence is one where the
 entries become arbitrarily close, not just to their successors but to all following entries. More precisely:
 
---------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Definition.* A sequence of rational numbers $\{q_i\}_{i \in \NN}$ is said to be /Cauchy/ if for every rational
 number $\epsilon > 0$, there is some natural number $N \in \NN$ such that for all $i, j \geq N$, we have that
 $|q_i - q_j| < \epsilon$.
---------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 (It is common to use $\epsilon$ to represent a very small quantity.)
 
---------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Lemma.* The sequence defined above to approximate $\sqrt{2}$ is Cauchy.
 
 *Proof.* First, we note that if $i \leq j$, we know that $q_i \leq q_j$, and $q_j - q_i < \frac{1}{10^i}$. This
@@ -56,7 +63,9 @@ Let $\epsilon$ be an arbitrary rational number, and let $N$ be a natural number 
 $\frac{1}{10^N} < \epsilon$. (Since $\epsilon > 0$, such an $N$ must exist.) Take $i$ and $j$ such that 
 $i, j \geq N$, and suppose without loss of generality that $i \leq j$. Then 
 \[ |q_i - q_j| = q_j - q_i < \frac{1}{10^i} \leq \frac{1}{10^N} < \epsilon. \]
---------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 Cauchy sequences allow us to notice these gaps in the rationals, but they are not unique: many Cauchy sequences
 can approach the same hole. For instance, the sequence $\{2, 1.5, 1.42, ...\}$ approaches the same point as
@@ -64,11 +73,15 @@ our other example, but from above instead of from below. It is slightly misleadi
 the same point," since there is no rational point that they approach; a more precise statement is that the
 sequences eventually become arbitrary close.
 
---------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Definition.* Two Cauchy sequences $p = \{p_i\}_{i \in \NN}$ and $q = \{q_i\}_{i \in \NN}$ are /equivalent/ if for every
 rational number $\epsilon > 0$, there is some natural number $N \in \NN$ such that for all $i \geq N$, we have
 that $|p_i - q_i| < \epsilon$. We write $p \sim q$.
---------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 As you might suspect from the name, $\sim$ defines an equivalence relation on Cauchy sequences. It is easy to check
 reflexivity and symmetry; we leave it as an exercise to check transitivity. We also leave it as an exercise to 
@@ -184,13 +197,17 @@ to ameliorate this kind of problem. Rather than calling a sequence Cauchy if it 
 /eventually/ (with no a priori information about when), we require that sequences converge at a
 fixed rate.
 
-------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Definition.* A sequence of rationals $\{q_i\}_{i \in \NN}$ is /constructively Cauchy/ if for
 all $i, j \in \NN$, we have that $|q_i - q_j| < \frac{1}{i + 1} + \frac{1}{j + 1}$.
 
 Two constructively Cauchy sequences  $\{p_i\}_{i \in \NN}$, $\{q_i\}_{i \in \NN}$ are /equivalent/ if
 for all $i \in \NN$, we have that $|p_i - q_i| < \frac{2}{i + 1}$.
-------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 It is not hard to see that every constructively Cauchy sequence is classically Cauchy. Furthermore,
 if $\{q_i\}_{i \in \NN}$ is constructively Cauchy, it follows that $q_i$ is within $\frac{1}{i}$
@@ -234,7 +251,7 @@ than the rational line. We explore this again in a later chapter on cardinality 
    is some rational $M$ such that $|q_i| \leq M$ for all $i$. Hint: try letting $\epsilon = 1$.
 
 4. Let $p = \{p_i\}_{i \in \NN}$ and $q = \{q_i\}_{i \in \NN}$ be Cauchy sequences, and
-   define $p + q = \{p_i + q_i\}_{i \in \NN}, $p*q = \{p_i * q_i\}_{i \in \NN}$.
+   define $p + q = \{p_i + q_i\}_{i \in \NN}$, $p*q = \{p_i * q_i\}_{i \in \NN}$.
    1. Show that $p + q$ is Cauchy. That is, for arbitrary $\epsilon > 0$, show that there exists
       an $N$ such that for all $i, j \geq N$, $|(p_i + q_i) - (p_j + q_j)| < \epsilon$. You will
       find the /triangle inequality/ useful: for any rationals $a$ and $b$, $|a + b| \leq |a| + |b|$.
