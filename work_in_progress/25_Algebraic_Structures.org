@@ -72,8 +72,8 @@ need to use this notation.
 - Take our domain to again be $\QQ$. When we interpret $\cdot$ as multiplication, $e$ as $1$, and $inv$ as
   reciprocation (that is, $(\frac{a}{b})^{-1} = \frac{b}{a}$),  we do /not/ get a group. Why not? The inverse we have
   defined here is not a total function -- there is no value set yet for $0^{-1}$. Of course, we could always
-  pick an arbitrary value for this (say, $0$), but the value must satisfy our third axiom
-  $0 \cdot 0^{-1} = 1 \wedge 0^{-1} \cdot 0 = 1$. Since there is no value we can multiply by $0$ to get 1,
+  pick an arbitrary value for this (say, $0$), but the value must satisfy our third axiom, saying that
+  $0 \cdot 0^{-1} = 1$ and $0^{-1} \cdot 0 = 1$. Since there is no value we can multiply by $0$ to get 1,
   this cannot hold. So we cannot define a group using multiplication over all of $\QQ$.
 - However, the interpretation above works perfectly well if we choose the domain $\QQ \setminus \{0\}$, the
   set of rationals excluding 0.
@@ -93,7 +93,7 @@ nothing like the set of integers. But some properties, consequences of the group
 #+LATEX: \horizontalrule
 
 *Theorem.* Let $G$ be a group. The identity element $e \in G$ is unique. That is: if for some element $e' \in G$,
-we have $\forall g (e' \cdot g = g \wedge g \cdot e' = g)$, then $e' = e$.
+we have $(e' \cdot g = g$ and $g \cdot e' = g)$ for every $g \in G$, then $e' = e$.
 
 *Proof.* Applying our hypothesis, we see that $e' \cdot e = e$. Applying the nilpotency axiom, we see that
 $e' \cdot e = e'$. Therefore, by the symmetry and transitivity of equality, e' = e.
@@ -154,7 +154,7 @@ notation $\inv$ for $inv$. We say that $F$ is a field if the following condition
 - $\langle F, 0, +, - \rangle$ forms a group
 - $\langle F \setminus \{0\}, 1, \cdot, \inv \rangle$ forms a group
 - The operations $+$ and $\cdot$ are commutative: for all $a, b \in F$, $a + b = b + a$ and $a \cdot b = b \cdot a$
-- Multiplication distributes over addition: for all $a, b, c \in F$, $a \cdot (b + c) = (a \cdot b) + (a \cdot c).
+- Multiplication distributes over addition: for all $a, b, c \in F$, $a \cdot (b + c) = (a \cdot b) + (a \cdot c)$.
 
 This description may seem a bit opaque, but once again, there are many familiar examples of fields. We argued earlier that
 the first two bullet points hold for the rationals $\QQ$, under the obvious interpretation;
@@ -171,6 +171,7 @@ In fact, for any prime $p$, the set $F = \{0, 1, \ldots, p - 1\}$ forms a field.
 #+LATEX: \horizontalrule
 
 *Theorem.* Let $F$ be a field. For any $a, b \in F$, we have $-(a\cdot b) = a \cdot (-b)$.
+
 *Proof.* Since $\langle F, 0, +, - \rangle$ forms a group, and inverses in a group are unique, it suffices to
 show that $(a\cdot b) + (a \cdot (-b)) = 0$. (Since addition is commutative, this will imply that 
 $(a \cdot (-b)) + (a\cdot b) = 0$.) And by distributivity, $(a\cdot b) + (a \cdot (-b)) = a \cdot (b + -b) = a \cdot 0 = 0$.
