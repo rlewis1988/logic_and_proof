@@ -17,12 +17,23 @@ of structures that appear again and again. While the /concrete/ instances of the
 structures may be quite different --
 for example, the set of integers, the set of isomorphisms from a set to itself, and the set
 of symmetries of a cube -- they share certain high-level properties of interest. Using
-terminology you've seen already, these structures are all /models/ for one particular theory.
+terminology you've seen already, these structures are all /models/ for one particular theory. That is,
+there is a first-order language and a collection of axioms in that language, such that the language
+can be interpreted in each of these structures in a way that makes each axiom true.
 
 The study of these fundamental structures and their models is called /algebra/, or sometimes /abstract
-algebra/ to distinguish it from the algebra learned in school.
+algebra/ to distinguish it from the algebra learned in school. Mathematicians approach the study of these
+structures in different ways. Some research what facts follow from the laws of a
+particular algebraic structure, often in the presence of other properties. Other mathematicians examine
+ways of transforming instances of an algebraic structure into others, or the connections between different
+kinds of structures.
 
-(FINISH INTRO)
+In this chapter, we briefly introduce two algebraic structures that appear often in mathematics. This
+introduction barely grazes the surface of abstract algebra: there are many types of structures with important
+and subtle properties, and many deep results about these structures. We introduce the ideas of groups 
+and field in this text for two reasons: one, to illustrate another way in which mathematicians reason
+about subjects in the abstract, and two, in the hope that readers may recognize these structures when they
+appear later in this text.
 
 ** Groups
 
@@ -78,7 +89,9 @@ need to use this notation.
 On the surface, these concrete groups look very different: the set of permutations of $S_n$ seems
 nothing like the set of integers. But some properties, consequences of the group axioms, hold in every group.
 
---------------------------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Theorem.* Let $G$ be a group. The identity element $e \in G$ is unique. That is: if for some element $e' \in G$,
 we have $\forall g (e' \cdot g = g \wedge g \cdot e' = g)$, then $e' = e$.
 
@@ -89,14 +102,22 @@ $e' \cdot e = e'$. Therefore, by the symmetry and transitivity of equality, e' =
 # $(e' \cdot e) \cdot e^{-1} = e \cdot e^{-1}$. Using the inverse axiom, the right hand side is equal to $e$:
 # $(e' \cdot e) \cdot e^{-1} = e. Using the associativity axiom, the left hand side is equal to e' \cdot (e \cdot e^{-1}),
 # which is equal to $e' \cdot e$ (by the inverse axiom), which is equal to $e'$ (by nilpotency). So we have derived $e' = e$.
---------------------------
---------------------------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Theorem.* Let $G$ be a group. For each $g \in G$, $g\inv$ is unique. That is: If for some element $h \in G$,
 we have $g\cdot h = e \wedge h \cdot g = e$, then $h = g\inv$.
 
 *Proof.* If $g \cdot h = e$, then $g\inv \cdot (g \cdot h) = g\inv \cdot h = g\inv$. By associativity, the right hand side
 is equal to $(g\inv \cdot g) \cdot h = e \cdot h = h$, so we have $h = g\inv$.
---------------------------
+
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 Suppose that $G$ is a group and $g \in G$. For a positive integer $n$, we write $g^n$ as shorthand for
 $g \cdot g \cdot \ldots \cdot g$, where $g$ is repeated $n$ times. (We can extend this notation to allow $n$ to be any
@@ -104,7 +125,9 @@ integer: $g^0 = e$ and $g^{-n} = (g\inv)^n$ when $n$ is positive.) The /order/ o
 $n$ such that $g^n = e$, if such an $n$ exists. (Can you think of an example of a group $G$ and an element $g \in G$ with
 infinite order?)
 
---------------------------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Theorem.* Let $G$ be a finite group. Every $g \in G$ has finite order, and this order is at most the cardinality of $G$.
 
 *Proof.* We examine the sequence of group elements $g, g^2, g^3, \ldots$. Since $G$ is finite, these elements cannot
@@ -116,7 +139,9 @@ without a repeat; therefore $l \le |G|$.
 We have that $g^{k - l}\cdot g^l = g^k = g^{k - l}$, and similarly $g^l \cdot g^{k - l} = g^l$. Since we have shown that
 in every group the identity $e$ is unique, this implies that $g^l = e$. We leave it as an exercise to the reader to argue
 that $l$ is the smallest number for which this is true. Therefore, the order of $g$ is $l \le |G|$.
---------------------------
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 ** Fields
 
@@ -141,6 +166,17 @@ on $F$ using modular arithmetic. (That is: if $a + b \ge 5$ when $a$ and $b$ are
 $a + b$ on $F$ to be the remainder when $a + b$ is divided by 5.) One can show the existence of additive and multiplicative
 inverses on $F$, and distributivity follows from distributivity on $\NN$; therefore this structure forms a field.
 In fact, for any prime $p$, the set $F = \{0, 1, \ldots, p - 1\}$ forms a field.
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
+*Theorem.* Let $F$ be a field. For any $a, b \in F$, we have $-(a\cdot b) = a \cdot (-b)$.
+*Proof.* Since $\langle F, 0, +, - \rangle$ forms a group, and inverses in a group are unique, it suffices to
+show that $(a\cdot b) + (a \cdot (-b)) = 0$. (Since addition is commutative, this will imply that 
+$(a \cdot (-b)) + (a\cdot b) = 0$.) And by distributivity, $(a\cdot b) + (a \cdot (-b)) = a \cdot (b + -b) = a \cdot 0 = 0$.
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 There are many situations in mathematics that seem to "require" real numbers: consider a vector space, for example,
 whose objects can be stretched or compressed by any factor $r \in \RR$. Often, there is nothing essential about $\RR$ in
