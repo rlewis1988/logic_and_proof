@@ -1,0 +1,281 @@
+#+Title: Logic and Proof
+#+Author: [[http://www.andrew.cmu.edu/user/avigad][Jeremy Avigad]], [[http://www.andrew.cmu.edu/user/rlewis1/][Robert Y. Lewis]],  [[http://www.contrib.andrew.cmu.edu/~fpv/][Floris van Doorn]]
+
+* Axiomatic Set Theory
+
+Much of the informal math that we have seen in this text is built 
+on top of "interfaces" for set theory and the natural numbers. In
+Chapter 11, we started with an intuitive notion of a "set," and
+described how the membership relation, intersection and union
+operations, and set-builder notation should behave. Using this notion
+and its associated features, we were able to describe relations, 
+functions, and even algebraic structures. But at no point did we
+say what a set really /is/, which sets exist, or by what rules we
+ought to reason about sets; we only indicated that there is a close
+but imprecise connection between the informal proofs we wrote and
+the natural-deduction proofs done in first-order logic.
+
+Similarly, in Chapter 17, we stated what properties the natural
+numbers ought to have without defining what a natural number is,
+and without justifying that the set of natural numbers actually 
+exists. Nevertheless, assuming that we had a structure that
+implemented this interface (along with the interface for set theory),
+we were able to state and prove some quite sophisticated theorems.
+Most mathematics -- in elementary education, in scientific 
+applications, in pure mathematical research -- operates at this
+level, "above" the interface. As long as the rules of reasoning
+are permissive enough, and they can do what they need to with sets
+and numbers, mathematicians (excluding logicians) tend to be
+agnostic toward the underlying foundation.
+
+# should we try to include a sketch of topics like what Jeremy
+# put on the board in class?
+
+It would be disingenuous for us to claim that informal mathematics
+is not rigorous. [CONTINUE WRITING MORE HERE]
+
+** Axioms of Set Theory
+
+The first-order language of set theory is quite simple: we assume
+only a single binary relation $\in$. Recall that in (unsorted) 
+first-order logic, any term could appear as an argument to a
+relation, so the expression 
+$\forall x \forall y (x \in y \wedge y \in x)$ is a well-formed 
+sentence in set theory. This points to an interesting feature
+of our language: /all/ of the terms refer to sets. There is no
+distinction between elements on one hand and sets on the other.
+Rather, every object can (possibly) contain other objects, and
+every object can be contained in other objects. As we will see
+soon, this even includes the natural numbers -- 0, 1, 2, etc.
+will all be defined to be sets themselves.
+
+The axioms of set theory serve two purposes: they define how
+the symbol $\in$ behaves, and they tell us what sets exist.
+For each axiom below, we state its informal meaning, and then
+write the axiom explicitly in first-order logic.
+
+-----
+*Axiom of Extensionality.* If two sets contain the same elements,
+they are equal.
+\[
+\forall a \forall b \left( \forall x(x \in a \leftrightarrow x \in b) \to a = b \right)
+\]
+----
+
+Extensionality corresponds directly to the property we introduced
+informally in Chapter 11.
+
+----
+*Axiom of the Empty Set.* There is a set that contains no elements.
+\[
+\exists a \forall x (\not x \in a)
+\]
+----
+
+Suppose there were two sets $a_0$ and $a_1$ satisfying
+$\forall x (\not x \in a)$. By extensionality, $a_0$ and $a_1$
+would be equal, and so the empty set guaranteed by this axiom
+is unique. Since there exists exactly one set with this property,
+we can introduce the notation $\emptyset$ for the set with the
+property that $\forall x (\not x \in \emptyset)$.
+We can also introduce the notation $x \notin a$ to stand for
+$\not x \in a$.
+
+
+----
+*Axiom of Pairing.* For any two sets $a$ and $b$, there is a set
+whose elements are exactly $a$ and $b$.
+\[
+\forall a \forall b \exists c \forall x 
+  (x \in c \leftrightarrow x = a \vee x = b)
+\]
+----
+
+Again, the pair set guaranteed by the axiom of pairing is unique,
+by extensionality. So we can write it as $\{a, b\}$. Notice that
+this axiom also allows us to construct singleton sets, since
+$\{a, a\} = \{a\}$ for each $a$.
+
+----
+*Axiom of Union.* For any set $a$, there is a set whose elements
+are exactly the sets which belong to some element of $a$.
+\[
+\forall a \exists b \forall x 
+  (x \in b \leftrightarrow \ex c (c \in a \wedge x \in c))
+\]
+----
+
+This axiom allows us to take the union over a set of sets. 
+Once again, the union is unique by extensionality, so we can introduce
+notation $\bigcup a$.
+One might expect the axiom to state that for any two sets $a$ and $b$,
+there is a set whose elements are those that belong to either $a$
+or $b$ (thus defining $a \cup b$). But our version is slightly
+stronger, and allows us to define the weaker binary union:
+$a \cup b = \bigcup \{a, b\}$, where we are allowed to introduce $\{a, b\}$
+by pairing.
+
+Note the relativized quantifier $\ex c (c \in a \wedge x \in c)$
+in the Axiom of Union. From this point on, we will sometimes write
+these in the alternate form $\ex c \in a (x \in c)$.
+Note also that we can define the subset relation $a \subseteq b$ to
+mean $\forall x (x \in a \to x \in b)$. This abbreviation is
+useful in the following axiom.
+
+----
+*Axiom of the Power Set.* For any set $a$, there is a set whose
+elements are exactly the subsets of $a$.
+\[
+\forall a \exists b \forall x (x \in b \leftrightarrow x \subseteq a)
+\]
+----
+
+We use the notation $\mathcal P(a)$ to denote the power set of $a$.
+
+Extensionality tells us how to interpret the relation $\in$, and 
+the other axioms tell us how to construct new sets from old ones. 
+So far, these new sets have always been "larger" than the old ones,
+at least in some vague sense. It is important that our axioms prevent
+us from constructing sets that are too large, lest we run into
+a paradoxical set as in Russell's construction. But intuitively,
+we can't end up with an excessively large set by choosing elements from
+a set that already exists. The following axiom schema makes this
+explicit. It is a /schema/ because it is in fact a collection of
+countably many axioms, each corresponding to a particular formula
+of our language. This reference to countability, and the reference
+to the natural numbers in the statement of the axiom, are not circular:
+we do not need to have defined either notion /in set theory/ to
+use them here.
+
+----
+*Axiom Schema of Separation.* For each natural number $k$ and each
+formula $\varphi(t_1, \ldots, t_k, c, x)$ containing no further free
+variables, the following sentence is an axiom:
+\[
+\forall t1 \ldots \forall t_k \forall c \exists b \forall x 
+  (x \in b \leftrightarrow x \in c \wedge \varphi(t1, \ldots, t_k, c, x)
+\]
+----
+
+The variables $t_i$ represent parameters to $\varphi$, and we can
+comfortably sweep them under the rug for now. What this axiom
+tells us is that given a set $c$, we can construct the set of 
+elements of $c$ that satisfy any definable property $\varphi$. 
+Since the resulting set is necessarily a subset of $c$, this axiom
+schema is sometimes called the subset schema. And since for any
+$\varphi$ and $c$, the resulting subset is unique, we can use the
+notation $\{x \in c \mid \varphi\}$.
+
+One particular instance of separation guarantees the existence of 
+the intersection of any two sets:
+\[
+\forall a \forall c \exists b \forall x 
+  (x \in b \leftrightarrow x \in c \wedge x \in a)
+\]
+
+Another allows us to construct the set of two-element subsets of
+any set $a$. Note that we can formalize the sentence "\(x\) contains
+exactly two elements" in first-order logic. Applying the axiom
+\[
+\forall c \ex b \forall x (x \in b \leftrightarrow x \in c 
+  \wedge x \text{ contains exactly two elements})
+\]
+to the set $\mathcal P(a)$ produces the desired set.
+
+This second construction illustrates a common way to show that
+particular sets exist. We first construct a set that /contains/ the
+desired set (using power sets, pairing, unions, and so on),
+and then separate the desired set from this superset.
+
+In fact, we can use this same technique to construct the Cartesian
+product $a \times b$ of two sets $a$ and $b$. Recall that an
+ordered pair $(x, y)$ can be defined as the set $\{\{x\}, \{x, y\}\}$,
+and that $a \times b$ is the set of all ordered pairs $(x, y)$
+such that $x \in a$ and $y \in b$. If $x \in a$ and $y \in b$, then
+both $\{x\}$ and $\{x, y\}$ are elements of $\mathcal P(a \cup b)$,
+and thus $\{\{x\}, \{x, y\}\} \in \mathcal P(\mathcal P(a \cup b))$.
+So we can separate $a \times b$ out from 
+$\mathcal P(\mathcal P(a \cup b))$:
+\[
+a \times b = \left{ w \in \mathcal P(\mathcal P(a \cup b))
+     \mid \exists x \in a \exists y \in b (w = (x, y))\right}
+\]
+
+** Relations and Functions
+The framework of first-order logic allows us to incorporate relation
+and function symbols into our foundational language. Doing so can be
+restrictive, however: it requires us to choose what symbols to allow at
+the outset, and does not allow us to quantify over functions or
+relations. (Doing so puts us in the realm of second-order logic.)
+Furthermore, function symbols can be applied to any terms, so the
+corresponding functions must be able to accept any sets as input. Since
+we have already declared that the language of set theory has only
+one relation symbol $\in$, one might wonder how we plan to talk about
+relations such as $\leq$ in set theory.
+
+The answer involves a construction that we have seen before: we will
+encode relations within set theory, by identifying a relation $R$ with
+the set of tuples of elements for which $R$ holds. We will use the
+case of a binary relation $R$ for illustration here, but this encoding
+extends easily to \(n\)ary relations.
+
+----
+*Definition.* A binary relation on sets $A$ and $B$ is a set
+$R \subseteq A \times B$.
+
+*Lemma.* If $(x, y) \in R$ then $x \in \bigcup\bigcup R$ and
+$y \in \bigcup\bigcup R$. 
+*Proof.* Suppose $(x, y) = \{\{x\}, \{x, y\}\} \in R$. Then
+$\{x, y\} \in \bigcup R$, since $\{x, y\}$ is in some element of $R$.
+Thus $x$ and $y$ are both elements of some element of $\bigcup R$,
+so both are elements of $\bigcup\bigcup R$.
+----
+
+
+
+** Constructing the Natural Numbers
+
+These five axioms and one axiom schema allow us to do many of the
+standard set-theoretic constructions we have seen informally. But 
+something vital is missing: using these axioms alone, we cannot prove
+the existence of an infinite set. In fact, it is not immediately clear
+how to even describe that a set is infinite, since our informal
+definition of cardinality used the set of natural numbers.
+
+We will soon add an axiom to our system that states the existence of
+an infinite set, in a way that does not circularly refer to the existence
+of the set of natural numbers. To motivate this axiom, we will first
+define what a natural number is. Notice that there is nothing circular
+about this: we are free to define individual natural numbers without
+assuming that there is a set containing all of them!
+
+# Rewrite/move this paragraph?
+Since every object in set theory is a set itself, each natural number
+will also be a set. This leads to some peculiarities: it will be a 
+perfectly well-formed question to ask whether $0 \in 5$, or whether
+$7 \subseteq 3$. These questions fall outside of the natural number
+"interface," though, and are not sensible in other frameworks (e.g. 
+type theory). Sometimes we refer to the set-theoretic representation
+of a number as its corresponding /numeral/, and reserve the natural
+number itself to mean a more abstract entity with the appropriate
+structural properties. 
+
+The natural number interface requires that there be an element 0
+and a unary successor function that is injective and never takes
+the value 0. We choose (somewhat arbitrarily) to define 0 to be
+the empty set $\emptyset$; for the successor function $\fn{succ}$, 
+we define $\fn{succ}(n)=n\cup\{n\}$. Our first few numerals are thus
+
+- $\bar 0 = \emptyset$
+- $\bar 1 = \{\emptyset\} = \{0\}$ 
+- $\bar 2 = \{\emptyset, \{\emptyset\}\} = \{0, 1\}$
+- $\bar 3 = \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\}
+    = \{0, 1, 2\}$
+
+This encoding has some nice properties. For any natural numbers
+$n$ and $m$, $n < m$ iff $\bar n \in \bar m$, and $\bar n$ contains
+$n$ elements. It is easy to argue that the successor function is
+injective and does not take the value 0, which we ask you to
+do in the exercises. Historically other encodings have been used --
+the successor function $\fn{succ}(n)=\{n\}$ was proposed by Zermelo --
+
