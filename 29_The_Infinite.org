@@ -321,7 +321,7 @@ $\bigcup_i A_i$ is countable.
 
 *Proof.* Suppose for each $i$, $f_i$ is a surjective function from
 $\NN$ to $A_i$. Then the function $g(i, j) = f_i(j)$ is a surjective
-function from $\NN$ to $\bigcup_i A_i$.
+function from $\NN \times \NN$ to $\bigcup_i A_i$.
 
 *Theorem.* Suppose that $A$ is countable. Then the set of finite
 sequences of elements of $A$ is countable.
@@ -431,15 +431,15 @@ countable, $[0,1]$ would be countable too.
 Recall that every real number $r \in [0,1]$ has a decimal expansion of
 the form $r = 0.r_1 r_2 r_3 r_4 \ldots$, where each $r_i$ is a digit
 in $\{0, 1, \ldots, 9\}$. More formally, we can write $r = \sum_{i =
-1}^\infty \frac{r_i}{10^{-i}}$ for each $r \in \RR$ with $0 \leq r \leq 1$.
+1}^\infty \frac{r_i}{10^{i}}$ for each $r \in \RR$ with $0 \leq r \leq 1$.
 
-(Notice that $1$ can be written $0.9999\ldots$. In general every
-other rational number in $[0,1]$ will have two representations of this
+(Notice that $1$ can be written $0.9999\ldots$. In general, many
+other rational numbers in $[0,1]$ will have two representations of this
 form; for example, $0.5 = 0.5000\ldots = 0.49999\ldots$. For
 concreteness, for these numbers we can choose the representation that
 ends with zeros.)
 
-As a result, we can write
+Let $f$ be an arbitrary function from $\NN$ to $\RR$. We can write
 # - $f(0) = 0.r_{0,0} r_{0,1} r_{0,2} r_{0,3} \ldots$
 # - $f(1) = 0.r_{1,0} r_{1,1} r_{1,2} r_{1,3} \ldots$
 # - $f(2) = 0.r_{2,0} r_{2,1} r_{2,2} r_{2,3} \ldots$
@@ -502,7 +502,7 @@ uncountable.
 our goal is to show that $f$ is not surjective. Let $S$ be the set of
 natural numbers, defined as follows:
 \begin{equation*}
-S = \{ n \in \NN \mid n \notin f(i) \}
+S = \{ n \in \NN \mid n \notin f(n) \}
 \end{equation*}
 In words, for every natural number, $n$, $n$ is in $S$ if and only if
 it is not in $f(n)$. Then clearly for every $n$, $f(n) \neq S$. So $f$
