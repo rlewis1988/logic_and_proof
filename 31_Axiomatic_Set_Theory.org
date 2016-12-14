@@ -54,23 +54,33 @@ the symbol $\in$ behaves, and they tell us what sets exist.
 For each axiom below, we state its informal meaning, and then
 write the axiom explicitly in first-order logic.
 
------
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Axiom of Extensionality.* If two sets contain the same elements,
 they are equal.
 \[
 \forall a \forall b \left( \forall x(x \in a \leftrightarrow x \in b) \to a = b \right)
 \]
-----
+
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 Extensionality corresponds directly to the property we introduced
 informally in Chapter 11.
 
-----
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Axiom of the Empty Set.* There is a set that contains no elements.
 \[
-\exists a \forall x (\not x \in a)
+\exists a \forall x (\neg x \in a)
 \]
-----
+
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 Suppose there were two sets $a_0$ and $a_1$ satisfying
 $\forall x (\not x \in a)$. By extensionality, $a_0$ and $a_1$
@@ -81,29 +91,38 @@ property that $\forall x (\not x \in \emptyset)$.
 We can also introduce the notation $x \notin a$ to stand for
 $\not x \in a$.
 
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
-----
 *Axiom of Pairing.* For any two sets $a$ and $b$, there is a set
 whose elements are exactly $a$ and $b$.
 \[
 \forall a \forall b \exists c \forall x 
   (x \in c \leftrightarrow x = a \vee x = b)
 \]
-----
+
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 Again, the pair set guaranteed by the axiom of pairing is unique,
 by extensionality. So we can write it as $\{a, b\}$. Notice that
 this axiom also allows us to construct singleton sets, since
 $\{a, a\} = \{a\}$ for each $a$.
 
-----
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Axiom of Union.* For any set $a$, there is a set whose elements
 are exactly the sets which belong to some element of $a$.
 \[
 \forall a \exists b \forall x 
   (x \in b \leftrightarrow \ex c (c \in a \wedge x \in c))
 \]
-----
+
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 This axiom allows us to take the union over a set of sets. 
 Once again, the union is unique by extensionality, so we can introduce
@@ -122,13 +141,17 @@ Note also that we can define the subset relation $a \subseteq b$ to
 mean $\forall x (x \in a \to x \in b)$. This abbreviation is
 useful in the following axiom.
 
-----
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Axiom of the Power Set.* For any set $a$, there is a set whose
 elements are exactly the subsets of $a$.
 \[
 \forall a \exists b \forall x (x \in b \leftrightarrow x \subseteq a)
 \]
-----
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 We use the notation $\mathcal P(a)$ to denote the power set of $a$.
 
@@ -147,7 +170,9 @@ to the natural numbers in the statement of the axiom, are not circular:
 we do not need to have defined either notion /in set theory/ to
 use them here.
 
-----
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Axiom Schema of Separation.* For each natural number $k$ and each
 formula $\varphi(t_1, \ldots, t_k, c, x)$ containing no further free
 variables, the following sentence is an axiom:
@@ -155,7 +180,9 @@ variables, the following sentence is an axiom:
 \forall t1 \ldots \forall t_k \forall c \exists b \forall x 
   (x \in b \leftrightarrow x \in c \wedge \varphi(t1, \ldots, t_k, c, x)
 \]
-----
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 The variables $t_i$ represent parameters to $\varphi$, and we can
 comfortably sweep them under the rug for now. What this axiom
@@ -197,8 +224,8 @@ and thus $\{\{x\}, \{x, y\}\} \in \mathcal P(\mathcal P(a \cup b))$.
 So we can separate $a \times b$ out from 
 $\mathcal P(\mathcal P(a \cup b))$:
 \[
-a \times b = \left{ w \in \mathcal P(\mathcal P(a \cup b))
-     \mid \exists x \in a \exists y \in b (w = (x, y))\right}
+a \times b = 
+\left\{ w \in \mathcal P(\mathcal P(a \cup b))\mid \exists x \in a \exists y \in b (w = (x, y))\right\}
 \]
 
 ** Relations and Functions
@@ -219,17 +246,22 @@ the set of tuples of elements for which $R$ holds. We will use the
 case of a binary relation $R$ for illustration here, but this encoding
 extends easily to \(n\)ary relations.
 
-----
+#+HTML: <hr>
+#+LATEX: \horizontalrule
+
 *Definition.* A binary relation on sets $A$ and $B$ is a set
 $R \subseteq A \times B$.
 
 *Lemma.* If $(x, y) \in R$ then $x \in \bigcup\bigcup R$ and
 $y \in \bigcup\bigcup R$. 
+
 *Proof.* Suppose $(x, y) = \{\{x\}, \{x, y\}\} \in R$. Then
 $\{x, y\} \in \bigcup R$, since $\{x, y\}$ is in some element of $R$.
 Thus $x$ and $y$ are both elements of some element of $\bigcup R$,
 so both are elements of $\bigcup\bigcup R$.
-----
+
+#+HTML: <hr>
+#+LATEX: \horizontalrule
 
 
 
